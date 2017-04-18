@@ -1,1 +1,40 @@
-{     "devDependencies": {         "smoke-and-mirrors": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-smoke-and-mirrors",     "homepage": "https://github.com/npmtest/node-npmtest-smoke-and-mirrors",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-smoke-and-mirrors.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [smoke-and-mirrors (v0.6.2)](https://runspired.github.io/smoke-and-mirrors)  [![npm package](https://img.shields.io/npm/v/npmtest-smoke-and-mirrors.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-smoke-and-mirrors) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-smoke-and-mirrors.svg)](https://travis-ci.org/npmtest/node-npmtest-smoke-and-mirrors)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "smoke-and-mirrors": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-smoke-and-mirrors",
+    "keywords": [
+        "coverage",
+        "test",
+        "smoke-and-mirrors"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_smoke_and_mirrors.js",
+    "name": "npmtest-smoke-and-mirrors",
+    "nameAlias": "npmtest_smoke_and_mirrors",
+    "nameOriginal": "npmtest-smoke-and-mirrors",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-smoke-and-mirrors.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
